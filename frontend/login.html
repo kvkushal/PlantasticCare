@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="icon" href="images/icon.png">
+</head>
+<style>
+  /* General*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f6f2;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.logo-container {
+  display: flex;
+  align-items: center; 
+}
+
+.logo {
+  max-width: 250px;
+  height: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  position: sticky;
+  width: 100%;
+}
+
+/* Navigation*/
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+header nav a {
+  color: #2a472e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Form*/
+.contact-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+.contact-form h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #2a472e;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: #2a472e;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+.contact-form button:hover {
+  background-color: #1d3521;
+}
+
+/* Modal */
+
+    .modal {
+        display: none; 
+        position: fixed;
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        background-color: rgba(0, 0, 0, 0.4);
+        padding-top: 60px;
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #fff;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 400px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Close Button */
+    .close {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* Modal Form */
+    .modal form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal form label {
+        font-size: 1rem;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    .modal form input {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .modal form button {
+        background-color: #2a472e;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+
+    .modal form button:hover {
+        background-color: #1d3521;
+    }
+
+    /* Modal Link Styling (Sign Up Link) */
+    .modal-link {
+        color: #2a472e;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .modal-link:hover {
+        text-decoration: underline;
+    }
+
+    /* Login Form Styles */
+    .login-form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 400px;
+        margin: 50px auto;
+    }
+
+    .login-form h2 {
+        text-align: center;
+        font-size: 1.8rem;
+        color: #2a472e;
+        margin-bottom: 20px;
+    }
+
+    .login-form label {
+        display: block;
+        font-size: 1rem;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    .login-form input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .login-form button {
+        background-color: #2a472e;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+
+    .login-form button:hover {
+        background-color: #1d3521;
+    }
+
+    .login-form .signup-link {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .login-form .signup-link a {
+        color: #2a472e;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .login-form .signup-link a:hover {
+        text-decoration: underline;
+    }
+
+/* Footer*/
+footer {
+    background-color: #3e3e3e;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+footer .social-media {
+    margin-top: 10px;
+}
+
+footer .social-media a {
+    margin: 0 15px;
+    display: inline-block;
+}
+
+footer .social-media img {
+    width: 30px;
+    height: 30px;
+}
+
+</style>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <a href="index.html"><img src="images/logo1.png" alt="PlantasticCare Logo" class="logo"></a>
+    </div>
+  
+    <nav>
+      <h3><a href="index.html">Home</a></h3>
+      <h3><a href="about.html">About</a></h3>
+      <h3><a href="plants.html">Plants</a></h3>
+      <h3><a href="care.html">Care</a></h3>
+      <h3><a href="forum.html">Community</a></h3>
+      <h3><a href="login.html">Login</a></h3>
+    </nav>
+  </header>
+
+<!-- Login Section -->
+<section class="contact-form">
+  <h2>Login</h2>
+  <form id="contact-form" action="#" method="POST">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Login</button>
+  </form>
+  <br>
+  <p>Don't have an account?&nbsp;&nbsp;<span class="modal-link" id="signup-link" style="color: #2a472e;">Sign up here</span></p>
+</section>
+
+<!-- Modal for Sign Up -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeSignupModal">&times;</span>
+    <h2>Sign Up</h2>
+    <form id="signup-form" action="#" method="POST">
+      <label for="full-name">Full Name</label>
+      <input type="text" id="full-name" name="full-name" required>
+
+      <label for="new-password">Password</label>
+      <input type="password" id="new-password" name="new-password" required>
+
+      <label for="new-email">Email Address</label>
+      <input type="email" id="new-email" name="new-email" required>
+
+      <label for="new-phone">Phone Number</label>
+      <input type="tel" id="new-phone" name="new-phone" required>
+
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // -------------------------- Login Form --------------------------
+    const loginForm = document.getElementById("contact-form");
+
+    loginForm.addEventListener("submit", async function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Collect form data
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // Validate the inputs
+      if (email && password) {
+        if (!validateEmail(email)) {
+          alert("Please enter a valid email address.");
+        } else {
+          try {
+            // Send login data to backend
+            const response = await fetch("http://localhost:5000/login", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email, password })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+              // On successful login, save the JWT token in localStorage
+              alert("Login successful!");
+              localStorage.setItem("token", result.token); // Save the JWT token
+              loginForm.reset(); // Reset the form after successful login
+              window.location.href = "index.html"; // Redirect to another page (dashboard/home)
+            } else {
+              alert(result.error || 'Login failed. Please try again.');
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            alert("Something went wrong. Please try again.");
+          }
+        }
+      } else {
+        alert("Please fill in all fields.");
+      }
+    });
+
+    // -------------------------- Modal for Sign-Up --------------------------
+    const modal = document.getElementById("signupModal");
+    const signupLink = document.getElementById("signup-link");
+    const closeModal = document.getElementById("closeSignupModal");
+    const signupForm = document.getElementById("signup-form");
+
+    signupLink.addEventListener("click", function () {
+      modal.style.display = "block";
+    });
+
+    closeModal.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+
+    // Sign-Up Form Submission
+    signupForm.addEventListener("submit", async function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      const signupUsername = document.getElementById("full-name").value;
+      const signupEmail = document.getElementById("new-email").value;
+      const signupPhone = document.getElementById("new-phone").value;
+      const signupPassword = document.getElementById("new-password").value;
+
+      if (signupUsername && signupEmail && signupPhone && signupPassword) {
+        if (!validatePhoneNumber(signupPhone)) {
+          alert("Phone number must be 10 digits.");
+        } else if (!validateEmail(signupEmail)) {
+          alert("Please enter a valid email address.");
+        } else if (!validatePassword(signupPassword)) {
+          alert("Password must be at least 8 characters, include an uppercase letter, a lowercase letter, a number, and a special character.");
+        } else {
+          try {
+            const response = await fetch("http://localhost:5000/register", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                username: signupUsername,
+                email: signupEmail,
+                phone: signupPhone,
+                password: signupPassword
+              })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+              alert("Signup successful!");
+              signupForm.reset(); // Reset the form after successful signup
+              modal.style.display = "none"; // Close the modal after successful signup
+            } else {
+              alert(result.error || 'Signup failed. Please try again.');
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            alert("Something went wrong. Please try again.");
+          }
+        }
+      } else {
+        alert("Please fill in all fields.");
+      }
+    });
+
+    // Validation Functions
+    function validatePhoneNumber(phone) {
+      const phonePattern = /^[0-9]{10}$/;
+      return phonePattern.test(phone);
+    }
+
+    function validateEmail(email) {
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      return emailPattern.test(email);
+    }
+
+    function validatePassword(password) {
+      const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      return passwordPattern.test(password);
+    }
+  });
+</script>
+
+  <!-- Footer -->
+<footer>
+  <h3>Stay connected and join our growing community! <br>Follow us on social media for the latest updates, tips, and inspiration for your indoor garden.</h3><br>
+  <div class="social-media">
+    <a href="https://www.instagram.com/">
+      <img src="images/instagram.png" alt="Instagram">
+    </a>
+    <a href="https://x.com/">
+      <img src="images/twitter.png" alt="Twitter">
+    </a>
+    <a href="https://pinterest.com/">
+      <img src="images/pinterest.png" alt="Pinterest">
+    </a>
+  </div>
+  <br>
+  <p style="text-align: right;">&copy; 2024 PlantasticCare. All rights reserved.</p>
+</footer>
+  
+  </body>
+</html>

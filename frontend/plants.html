@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plants</title>
+  <link rel="icon" href="images/icon.png">
+  <link rel="stylesheet" href="css/plants-style.css">
+  <script src="js/plants.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <a href="index.html"><img src="images/logo1.png" alt="PlantasticCare Logo" class="logo"></a>
+    </div>
+
+    <nav>
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input type="text" class="search-bar" placeholder="Search for plants...">
+      </div>
+
+      <h3><a href="index.html">Home</a></h3>
+      <h3><a href="about.html">About</a></h3>
+      <h3><a href="plants.html">Plants</a></h3>
+      <h3><a href="care.html">Care</a></h3>
+      <h3><a href="forum.html">Community</a></h3>
+      <h3><a href="login.html">Login</a></h3>
+    </nav>
+  </header>
+
+  <main class="guide-content">
+
+    <section class="plant-filter">
+      <h2>Find Your Perfect Plant</h2>
+      <div class="filter-container">
+        <label for="maintenance">Maintenance:</label>
+        <select id="maintenance">
+          <option value="">Any</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+    
+        <label for="sunlight">Sunlight:</label>
+        <select id="sunlight">
+          <option value="">Any</option>
+          <option value="direct">Direct</option>
+          <option value="indirect">Indirect</option>
+        </select>
+        
+        <label for="climate">Climate:</label>
+        <select id="climate">
+          <option value="">Any</option>
+          <option value="tropical">Tropical</option>
+          <option value="dry">Dry</option>
+          <option value="humid">Humid</option>
+        </select>
+
+        <label for="soil-type">Soil Type:</label>
+        <select id="soil-type">
+          <option value="">Any</option>
+          <option value="loamy">Loamy</option>
+          <option value="sandy">Sandy</option>
+          <option value="clay">Clay</option>
+        </select>
+    
+        <label for="toxicity">Toxicity:</label>
+        <select id="toxicity">
+          <option value="">Any</option>
+          <option value="toxic">Toxic</option>
+          <option value="non-toxic">Non-Toxic</option>
+        </select>
+
+        <label for="watering-frequency">Watering Frequency:</label>
+        <select id="watering-frequency">
+          <option value="">Any</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+    
+        <button id="filter-button">Apply Filters</button>
+      </div>
+    </section>
+
+    <div class="plant-grid">
+      
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/phalaenopsis-orchids-definition-1902866">
+          <img src="images/mothorchid.png" alt="moth orchid">
+           <p>Moth Orchid</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/grow-fittonia-houseplants-indoors-1902486">
+          <img src="images/nerveplant.png" alt="nerve plant">
+           <p>Nerve Plant</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/grow-codiaeum-variegatum-1902750">
+          <img src="images/croton.png" alt="croton">
+           <p>Croton</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/grow-pencil-cactus-inside-1902984">
+          <img src="images/pencilcactus.png" alt="pencil cactus">
+           <p>Pencil Cactus</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.pottedplants.org/plant-care/burros-tail-care-guide/">
+          <img src="images/burro'stail.png" alt="burro's tail">
+           <p>Burro's Tail</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/english-ivy-plants-2132215">
+          <img src="images/englishivy.png" alt="english ivy">
+           <p>English Ivy</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/triostar-stromanthe-plant-profile-5069126">
+          <img src="images/stromanthetriostar.png" alt="stromanthe triostar">
+           <p>Stromanthe Triostar</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/mini-monstera-growing-guide-5210248">
+          <img src="images/minimonstera.png" alt="mini monstera">
+           <p>Mini Monstera</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/oxalis-growing-guide-7506977">
+          <img src="images/oxalis.png" alt="oxalis">
+           <p>Oxalis</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/grow-yucca-inside-1902500">
+          <img src="images/yucca.png" alt="yucca">
+           <p>Yucca</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/how-to-grow-caladium-1902744">
+          <img src="images/caladium.png" alt="caladium">
+           <p>Caladium</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/monstera-peru-growing-guide-5210094">
+          <img src="images/monstera.png" alt="monstera">
+           <p>Monstera</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/grow-aglaonema-houseplants-1902734">
+          <img src="images/chineseevergreen.png" alt="chinese evergreen">
+           <p>Chinese Evergreen</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/ficus-audrey-care-guide-5221681">
+          <img src="images/ficusaudrey.png" alt="ficusaudrey">
+           <p>Ficus Audrey</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/coral-cactus-6739993">
+          <img src="images/coralcactus.png" alt="coral cactus">
+           <p>Coral Cactus</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/growing-hindu-rope-plants-5089215">
+          <img src="images/hinduropeplant.png" alt="hindu rope plant">
+           <p>Hindu Rope Plant</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/grow-desert-rose-plants-indoors-1902974">
+          <img src="images/desertrose.png" alt="desert rose">
+           <p>Desert Rose</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/pilea-involucrata-plant-profile-7374044">
+          <img src="images/pilea.png" alt="pilea">
+           <p>Pilea</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/growing-guiana-chestnut-indoors-4773440">
+          <img src="images/moneytree.png" alt="money tree">
+           <p>Money Tree</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/monstera-adansonii-variegated-care-8558381">
+          <img src="images/monsteraadansonii.png" alt="monstera adansonii">
+           <p>Monstera Adansonii</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/snake-plant-care-overview-1902772">
+          <img src="images/snakeplant.png" alt="snake plant">
+           <p>Snake Plant</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/heartleaf-philodendron-guide-5181702">
+          <img src="images/heartleafphilodendron.png" alt="heartleaf philodendron">
+           <p>Heartleaf Philodendron</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/raven-zz-plant-7097814">
+          <img src="images/zzplant.png" alt="zz plant">
+           <p>ZZ Plant</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/grow-anthurium-plants-1902738">
+          <img src="images/anthurium.png" alt="anthurium">
+           <p>Anthurium</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/spider-plants-chlorophytum-definition-1902773">
+          <img src="images/spiderplant.png" alt="spider plant">
+           <p>Spider Plant</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/variegated-fiddle-leaf-fig-care-7511409">
+          <img src="images/fiddleleaffig.png" alt="fiddle leaf fig">
+           <p>Fiddle Leaf Fig</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/grow-rubber-plant-ficus-indoors-1902755">
+          <img src="images/rubbertree.png" alt="rubber tree">
+           <p>Rubber Tree</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.petalrepublic.com/calathea-medallion-care/">
+          <img src="images/calatheamedallion.png" alt="calathea medallion">
+           <p>Calathea Medallion</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://geekygreenhouse.com/calathea-rattlesnake-plant-care/">
+          <img src="images/calathearattlesnake.png" alt="calathea rattlesnake">
+           <p>Calathea Rattlesnake</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/calathea-orbifolia-growing-guide-5270824">
+          <img src="images/calatheaorbifolia.png" alt="calathea orbifolia">
+           <p>Calathea Orbifolia</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/grow-maranta-inside-1902647">
+          <img src="images/maranta.png" alt="maranta">
+           <p>Maranta</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://abeautifulmess.com/how-to-care-for-golden-pothos/">
+          <img src="images/goldenpothos.png" alt="golden pothos">
+           <p>Golden Pothos</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/grow-chamaedorea-indoors-1902884">
+          <img src="images/parlorpalm.png" alt="parlorpalm">
+           <p>Parlor Palm</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/alocasia-polly-7095683">
+          <img src="images/alocasiapolly.png" alt="alocasia polly">
+           <p>Alocasia Polly</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/alocasia-polly-7095683">
+          <img src="images/ponytailpalm.png" alt="ponytail palm">
+           <p>Ponytail Palm</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/dracaena-overview-care-1902754">
+          <img src="images/dracaena.png" alt="dracaena">
+           <p>Dracaena</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/grow-schefflera-plants-inside-1902771">
+          <img src="images/schefflera.png" alt="schefflera">
+           <p>Schefflera</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/dumb-cane-dieffenbachia-definition-1902751">
+          <img src="images/dieffenbachia.png" alt="dieffenbachia">
+           <p>Dieffenbachia</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://plantophiles.com/plant-care/philodendron-selloum/">
+          <img src="images/philodendronselloum.png" alt="philodendron selloum">
+           <p>Philodendron Selloum</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://plantophiles.com/plant-care/alocasia-calidora/">
+          <img src="images/alocasiacalidora.png" alt="alocasia calidora">
+           <p>Alocasia Calidora</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.pottedplants.org/plant-care/hoya-tricolor-care-guide/">
+          <img src="images/tricolorhoya.png" alt="tricolor hoya">
+           <p>Tricolor Hoya</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/begonia-maculata-care-guide-6743839">
+          <img src="images/spottedbegonia.png" alt="spotted begonia">
+           <p>Spotted Begonia</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/growing-string-of-dolphins-5089406">
+          <img src="images/stringofdolphins.png" alt="string of dolphins">
+           <p>String of Dolphins</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/growing-string-of-heart-plants-5086828">
+          <img src="images/stringofhearts.png" alt="string of hearts">
+           <p>String of Hearts</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/fishbone-cactus-care-guide-5199263">
+          <img src="images/fishbonecactus.png" alt="fishbone cactus">
+           <p>Fishbone Cactus</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/grow-peace-lilies-1902767">
+          <img src="images/peacelily.png" alt="peace lily">
+           <p>Peace Lily</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/how-to-cut-an-aloe-plant-7550745">
+          <img src="images/aloeplant.png" alt="aloe plant">
+           <p>Aloe Plant</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/grow-nephrolepis-boston-ferns-1902723">
+          <img src="images/bostonfern.png" alt="boston fern">
+           <p>Bosten Fern</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/watermelon-peperomia-guide-5201470">
+          <img src="images/watermelonpeperomia.png" alt="watermelon peperomia">
+           <p>Watermelon Peperomia</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.epicgardening.com/tradescantia-nanouk/">
+          <img src="images/tradescantiananouk.png" alt="tradescantia nanouk">
+           <p>Tradescantia Nanouk</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/growing-satin-pothos-5114102">
+          <img src="images/satinpothos.png" alt="satin pothos">
+           <p>Satin Pothos</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://thenatureofhome.com/starfish-snake-plant-care/">
+          <img src="images/starfishsnakeplant.png" alt="starfish snake plant">
+           <p>Starfish Snake Plant</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/african-milk-tree-profile-4846360">
+          <img src="images/africanmilktree.png" alt="african milk tree">
+           <p>African Milk Tree</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/grow-asplenium-nidus-ferns-1902716">
+          <img src="images/bird'snestfern.png" alt="bird's nest fern">
+           <p>Bird's Nest Fern</p><br>
+        </a>
+      </div>
+
+      <div class="plant-item">
+        <a href="https://www.thespruce.com/how-to-grow-strelitzia-1902742">
+          <img src="images/birdofparadise.png" alt="bird of paradise">
+           <p>Bird of Paradise</p><br>
+        </a>
+      </div>
+      
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <h3>Stay connected and join our growing community! <br>Follow us on social media for the latest updates, tips, and inspiration for your indoor garden.</h3><br>
+    <div class="social-media">
+      <a href="https://www.instagram.com/">
+        <img src="images/instagram.png" alt="Instagram">
+      </a>
+      <a href="https://x.com/">
+        <img src="images/twitter.png" alt="Twitter">
+      </a>
+      <a href="https://pinterest.com/">
+        <img src="images/pinterest.png" alt="Pinterest">
+      </a>
+    </div>
+    <br>
+    <p style="text-align: right;">&copy; 2024 PlantasticCare. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Forum</title>
+  <link rel="icon" href="images/icon.png">
+  <link rel="stylesheet" href="css/forum-style.css">
+  <script defer src="js/forum.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <a href="index.html"><img src="images/logo1.png" alt="PlantasticCare Logo" class="logo"></a>
+    </div>
+    <nav>
+      <h3><a href="index.html">Home</a></h3>
+      <h3><a href="about.html">About</a></h3>
+      <h3><a href="plants.html">Plants</a></h3>
+      <h3><a href="care.html">Care</a></h3>
+      <h3><a href="forum.html">Community</a></h3>
+      <h3><a href="login.html">Login</a></h3>
+    </nav>
+  </header>
+
+   <!-- Forum Section -->
+   <main>
+    <h1>Community Forum</h1>
+    <p class="main_p">Welcome to the PlantasticCare Community Forum! This is a space where plant enthusiasts of all levels can connect, share tips, ask questions, and learn from each other. Whether you're a beginner or an expert, feel free to join the conversation, share your experiences, and help others in their plant care journey!</p>
+    <!-- New Post Form -->
+    <section id="new-post-section">
+      <h2>Create a New Post</h2>
+      <form id="new-post-form">
+        <label for="post-title">Title:</label>
+        <input type="text" id="post-title" name="title" placeholder="Enter post title" required>
+  
+        <label for="post-content">Content:</label>
+        <textarea id="post-content" name="content" rows="5" placeholder="Write your post content here" required></textarea>
+  
+        <button type="submit">Post</button>
+      </form>
+    </section>
+  
+    <!-- Posts Section -->
+    <section id="posts-section">
+      <h2>Posts</h2>
+      <div id="posts-container"></div>
+    </section>
+  </main>
+  
+
+  <!-- Footer -->
+  <footer>
+    <h3>Stay connected and join our growing community! <br>Follow us on social media for the latest updates, tips, and inspiration for your indoor garden.</h3><br>
+    <div class="social-media">
+      <a href="https://www.instagram.com/">
+        <img src="images/instagram.png" alt="Instagram">
+      </a>
+      <a href="https://x.com/">
+        <img src="images/twitter.png" alt="Twitter">
+      </a>
+      <a href="https://pinterest.com/">
+        <img src="images/pinterest.png" alt="Pinterest">
+      </a>
+    </div>
+    <br>
+    <p style="text-align: right;">&copy; 2024 PlantasticCare. All rights reserved.</p>
+  </footer>
+</body>
+</html>

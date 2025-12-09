@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us</title>
+  <title>About Us - PlantasticCare</title>
+  <meta name="description"
+    content="Learn about PlantasticCare's mission to help plant lovers grow and care for their indoor plants with confidence.">
+  <meta name="theme-color" content="#2a472e">
   <link rel="icon" href="images/icon.png">
+  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="css/about-style.css">
+  <script src="js/config.js"></script>
+  <script src="js/enhancements.js" defer></script>
   <script src="js/about.js" defer></script>
+  <style>
+    /* Auth navigation styles */
+    .auth-nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .user-greeting {
+      color: #2a472e;
+      font-weight: 500;
+    }
+
+    .logout-link {
+      color: #dc3545 !important;
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
 
   <!-- Header -->
@@ -15,15 +41,16 @@
     <div class="logo-container">
       <a href="index.html"><img src="images/logo1.png" alt="PlantasticCare Logo" class="logo"></a>
     </div>
-  
-    <nav>
 
+    <nav>
       <h3><a href="index.html">Home</a></h3>
       <h3><a href="about.html">About</a></h3>
       <h3><a href="plants.html">Plants</a></h3>
       <h3><a href="care.html">Care</a></h3>
       <h3><a href="forum.html">Community</a></h3>
-      <h3><a href="login.html">Login</a></h3>
+      <div id="auth-nav" class="auth-nav">
+        <h3><a href="login.html">Login</a></h3>
+      </div>
     </nav>
   </header>
 
@@ -32,7 +59,8 @@
       <img src="images/about6.jpg" alt="Our Founding Story">
       <div>
         <h2>About PlantasticCare: Growing Joy Indoors</h2><br>
-        <p>Welcome to PlantasticCare! We believe that plants bring happiness and beauty into every space. We believe that every plant has a story and our goal is to help you write yours.</p>
+        <p>Welcome to PlantasticCare! We believe that plants bring happiness and beauty into every space. We believe
+          that every plant has a story and our goal is to help you write yours.</p>
       </div>
     </div>
     <hr>
@@ -40,7 +68,9 @@
       <img src="images/about2.png" alt="Our Mission">
       <div>
         <h2>Our Mission: Cultivating a Love for Indoor Gardening</h2><br>
-        <p>Our mission is to inspire a love for plants and make indoor gardening easy and joyful. From beginners to plant enthusiasts, we aim to provide tools, guidance, and sustainable practices for thriving indoor gardens.</p>
+        <p>Our mission is to inspire a love for plants and make indoor gardening easy and joyful. From beginners to
+          plant enthusiasts, we aim to provide tools, guidance, and sustainable practices for thriving indoor gardens.
+        </p>
       </div>
     </div>
     <hr>
@@ -48,7 +78,8 @@
       <img src="images/about5.jpg" alt="What Makes Us Unique">
       <div>
         <h2>What Sets Us Apart: Ethical, Eco-Friendly, and Personalized</h2><br>
-        <p>We stand out by offering ethically sourced plants, eco-friendly packaging, and personalized guidance. Whether you're exploring rare species or creating your first green corner, we’re here to support your journey.</p>
+        <p>We stand out by offering ethically sourced plants, eco-friendly packaging, and personalized guidance. Whether
+          you're exploring rare species or creating your first green corner, we're here to support your journey.</p>
       </div>
     </div>
     <hr>
@@ -56,7 +87,8 @@
       <img src="images/about7.jpg" alt="Meet Our Team">
       <div>
         <h2>Our Passionate Plant Team</h2><br>
-        <p>Our dedicated team consists of passionate plant enthusiasts who are committed to sharing knowledge and providing exceptional customer care. Together, we’re building a vibrant community of plant lovers.</p>
+        <p>Our dedicated team consists of passionate plant enthusiasts who are committed to sharing knowledge and
+          providing exceptional customer care. Together, we're building a vibrant community of plant lovers.</p>
       </div>
     </div>
     <hr>
@@ -65,40 +97,69 @@
       <h2>Got questions? Our team is here to help anytime!</h2>
       <form id="contact-form" action="#" method="POST">
         <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required>
-      
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required autocomplete="name">
+
         <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
-      
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required>
-      
+        <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="email">
+
+        <label for="phone">Phone Number (optional):</label>
+        <input type="tel" id="phone" name="phone" placeholder="10 digit phone number" pattern="[0-9]{10}"
+          autocomplete="tel">
+
         <label for="message">Your Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-      
+        <textarea id="message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
+
         <button type="submit">Send Message</button>
-      </form>      
+      </form>
     </section>
 
   </main>
 
   <!-- Footer -->
   <footer>
-    <h3>Stay connected and join our growing community! <br>Follow us on social media for the latest updates, tips and inspiration for your indoor garden.</h3><br>
+    <h3>Stay connected and join our growing community! <br>Follow us on social media for the latest updates, tips and
+      inspiration for your indoor garden.</h3><br>
     <div class="social-media">
-      <a href="https://www.instagram.com/">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
         <img src="images/instagram.png" alt="Instagram">
       </a>
-      <a href="https://x.com/">
+      <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
         <img src="images/twitter.png" alt="Twitter">
       </a>
-      <a href="https://pinterest.com/">
+      <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer">
         <img src="images/pinterest.png" alt="Pinterest">
       </a>
     </div>
     <br>
-    <p style="text-align: right;">&copy; 2024 PlantasticCare. All rights reserved.</p>
+    <p style="text-align: right;">&copy; <span id="current-year">2024</span> PlantasticCare. All rights reserved.</p>
   </footer>
 
+  <script>
+    // Update auth navigation on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      const authNav = document.getElementById('auth-nav');
+
+      if (API_CONFIG.isLoggedIn()) {
+        const user = API_CONFIG.getUser();
+        authNav.innerHTML = `
+          <a href="login.html" class="user-greeting" title="View Profile & Favorites">👤 ${sanitize.escapeHtml(user?.username || 'User')}</a>
+          <a href="#" class="logout-btn" onclick="handleLogout(event)">Logout</a>
+        `;
+      } else {
+        authNav.innerHTML = '<h3><a href="login.html">Login</a></h3>';
+      }
+    });
+
+    function handleLogout(e) {
+      e.preventDefault();
+      API_CONFIG.clearAuth();
+      Toast.success('Logged out successfully!');
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    }
+  </script>
+
 </body>
+
 </html>

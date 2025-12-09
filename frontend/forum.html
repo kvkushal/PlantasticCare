@@ -1,12 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Community Forum</title>
+  <title>Community Forum - PlantasticCare</title>
+  <meta name="description"
+    content="Join the PlantasticCare community forum to share plant care tips, ask questions, and connect with fellow plant enthusiasts.">
+  <meta name="theme-color" content="#2a472e">
   <link rel="icon" href="images/icon.png">
+  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="css/forum-style.css">
+  <script src="js/config.js"></script>
+  <script src="js/enhancements.js" defer></script>
   <script defer src="js/forum.js"></script>
+  <style>
+    /* Vote Button Styles */
+    .vote-buttons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 15px 0;
+    }
+
+    .upvote-button,
+    .downvote-button {
+      background: #f0f0f0;
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 14px;
+    }
+
+    .upvote-button:hover {
+      background: #d4edda;
+      border-color: #2a7a44;
+    }
+
+    .downvote-button:hover {
+      background: #f8d7da;
+      border-color: #dc3545;
+    }
+
+    .upvote-button.active {
+      background: #2a7a44;
+      color: white;
+      border-color: #2a7a44;
+    }
+
+    .downvote-button.active {
+      background: #dc3545;
+      color: white;
+      border-color: #dc3545;
+    }
+
+    .vote-count {
+      font-weight: bold;
+      font-size: 16px;
+      min-width: 30px;
+      text-align: center;
+      color: #2a472e;
+    }
+
+    .vote-icon {
+      font-size: 12px;
+    }
+
+    /* Comment styles */
+    .comment-item {
+      padding: 12px;
+      margin: 8px 0;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 3px solid #2a7a44;
+    }
+
+    .comment-item strong {
+      color: #2a472e;
+    }
+
+    /* Logout button in nav */
+    .logout-btn {
+      background: #dc3545;
+      color: white !important;
+      padding: 8px 16px;
+      border-radius: 5px;
+      text-decoration: none !important;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      background: #c82333;
+    }
+
+    /* User info */
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .user-greeting {
+      color: #2a472e;
+      font-weight: 500;
+    }
+  </style>
 </head>
 
 <body>
@@ -21,52 +122,86 @@
       <h3><a href="plants.html">Plants</a></h3>
       <h3><a href="care.html">Care</a></h3>
       <h3><a href="forum.html">Community</a></h3>
-      <h3><a href="login.html">Login</a></h3>
+      <div id="auth-nav">
+        <!-- Will be populated by JavaScript -->
+      </div>
     </nav>
   </header>
 
-   <!-- Forum Section -->
-   <main>
+  <!-- Forum Section -->
+  <main>
     <h1>Community Forum</h1>
-    <p class="main_p">Welcome to the PlantasticCare Community Forum! This is a space where plant enthusiasts of all levels can connect, share tips, ask questions, and learn from each other. Whether you're a beginner or an expert, feel free to join the conversation, share your experiences, and help others in their plant care journey!</p>
+    <p class="main_p">Welcome to the PlantasticCare Community Forum! This is a space where plant enthusiasts of all
+      levels can connect, share tips, ask questions, and learn from each other. Whether you're a beginner or an expert,
+      feel free to join the conversation, share your experiences, and help others in their plant care journey!</p>
+
     <!-- New Post Form -->
     <section id="new-post-section">
       <h2>Create a New Post</h2>
       <form id="new-post-form">
         <label for="post-title">Title:</label>
-        <input type="text" id="post-title" name="title" placeholder="Enter post title" required>
-  
+        <input type="text" id="post-title" name="title" placeholder="Enter post title" required maxlength="200">
+
         <label for="post-content">Content:</label>
-        <textarea id="post-content" name="content" rows="5" placeholder="Write your post content here" required></textarea>
-  
+        <textarea id="post-content" name="content" rows="5" placeholder="Write your post content here" required
+          maxlength="5000"></textarea>
+
         <button type="submit">Post</button>
       </form>
     </section>
-  
+
     <!-- Posts Section -->
     <section id="posts-section">
       <h2>Posts</h2>
       <div id="posts-container"></div>
     </section>
   </main>
-  
+
 
   <!-- Footer -->
   <footer>
-    <h3>Stay connected and join our growing community! <br>Follow us on social media for the latest updates, tips, and inspiration for your indoor garden.</h3><br>
+    <h3>Stay connected and join our growing community! <br>Follow us on social media for the latest updates, tips, and
+      inspiration for your indoor garden.</h3><br>
     <div class="social-media">
-      <a href="https://www.instagram.com/">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
         <img src="images/instagram.png" alt="Instagram">
       </a>
-      <a href="https://x.com/">
+      <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
         <img src="images/twitter.png" alt="Twitter">
       </a>
-      <a href="https://pinterest.com/">
+      <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer">
         <img src="images/pinterest.png" alt="Pinterest">
       </a>
     </div>
     <br>
-    <p style="text-align: right;">&copy; 2024 PlantasticCare. All rights reserved.</p>
+    <p style="text-align: right;">&copy; <span id="current-year">2024</span> PlantasticCare. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Update navigation based on login status
+    document.addEventListener('DOMContentLoaded', function () {
+      const authNav = document.getElementById('auth-nav');
+
+      if (API_CONFIG.isLoggedIn()) {
+        const user = API_CONFIG.getUser();
+        authNav.innerHTML = `
+          <a href="login.html" class="user-greeting" title="View Profile & Favorites">👤 ${sanitize.escapeHtml(user?.username || 'User')}</a>
+          <a href="#" class="logout-btn" onclick="handleLogout(event)">Logout</a>
+        `;
+      } else {
+        authNav.innerHTML = '<h3><a href="login.html">Login</a></h3>';
+      }
+    });
+
+    function handleLogout(e) {
+      e.preventDefault();
+      API_CONFIG.clearAuth();
+      Toast.success('Logged out successfully!');
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 1000);
+    }
+  </script>
 </body>
+
 </html>

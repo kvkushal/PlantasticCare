@@ -1,0 +1,46 @@
+{
+    "name": "PlantasticCare",
+    "short_name": "PlantasticCare",
+    "description": "Your friendly plant care companion - guides, tips, and community for plant lovers",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#f9f6f2",
+    "theme_color": "#2a472e",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "images/icon.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "images/icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "lifestyle",
+        "education"
+    ],
+    "screenshots": [],
+    "shortcuts": [
+        {
+            "name": "Browse Plants",
+            "url": "/plants.html",
+            "description": "Explore our plant collection"
+        },
+        {
+            "name": "Care Guides",
+            "url": "/care.html",
+            "description": "Learn how to care for your plants"
+        },
+        {
+            "name": "Community Forum",
+            "url": "/forum.html",
+            "description": "Connect with plant enthusiasts"
+        }
+    ]
+}

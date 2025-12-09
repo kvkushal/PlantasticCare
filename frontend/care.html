@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plant Care</title>
+  <title>Plant Care - PlantasticCare</title>
+  <meta name="description"
+    content="Learn essential plant care tips, from watering and lighting to pest control and propagation.">
+  <meta name="theme-color" content="#2a472e">
   <link rel="icon" href="images/icon.png">
+  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="css/care-style.css">
+  <script src="js/config.js"></script>
+  <script src="js/enhancements.js" defer></script>
+  <style>
+    /* Auth navigation styles */
+    .auth-nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .user-greeting {
+      color: #2a472e;
+      font-weight: 500;
+    }
+
+    .logout-link {
+      color: #dc3545 !important;
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
 
   <!-- Header -->
@@ -14,16 +40,16 @@
     <div class="logo-container">
       <a href="index.html"><img src="images/logo1.png" alt="PlantasticCare Logo" class="logo"></a>
     </div>
-  
-    <nav>
 
+    <nav>
       <h3><a href="index.html">Home</a></h3>
       <h3><a href="about.html">About</a></h3>
       <h3><a href="plants.html">Plants</a></h3>
       <h3><a href="care.html">Care</a></h3>
       <h3><a href="forum.html">Community</a></h3>
-      <h3><a href="login.html">Login</a></h3>
-  
+      <div id="auth-nav" class="auth-nav">
+        <h3><a href="login.html">Login</a></h3>
+      </div>
     </nav>
   </header>
 
@@ -31,112 +57,123 @@
     <div class="care-grid">
 
       <div class="care-item">
-        <a href="https://www.evergreenseeds.com/is-neem-oil-good-for-plants/#:~:text=Benefits%20of%20Neem%20Oil%20in%20Plant%20Care%201,promotes%20growth%20and%20enriches%20soil%20health%20.%20">
+        <a href="https://www.evergreenseeds.com/is-neem-oil-good-for-plants/" target="_blank" rel="noopener noreferrer">
           <img src="images/care1.png" alt="Your New Best Friend: Neem Oil">
           <p>Your New Best Friend: Neem Oil</p>
         </a>
       </div>
 
       <div class="care-item">
-        <a href="https://thescientificgardener.com/history-houseplants">
+        <a href="https://thescientificgardener.com/history-houseplants" target="_blank" rel="noopener noreferrer">
           <img src="images/care2.png" alt="An Origin Story: Where Did My Houseplant Come From?">
           <p>An Origin Story: Where Did My Plant Come From?</p>
         </a>
       </div>
 
       <div class="care-item">
-        <a href="https://dennis7dees.com/the-science-behind-plant-propagation/">
+        <a href="https://dennis7dees.com/the-science-behind-plant-propagation/" target="_blank"
+          rel="noopener noreferrer">
           <img src="images/care3.png" alt="Propagation: When Your Plant Babies Have Babies">
           <p>Propagation: When Your Plant Babies Have Babies</p>
         </a>
       </div>
 
       <div class="care-item">
-        <a href="https://bestplantfriend.com/blogs/blogs/how-to-prune-and-shape-your-houseplant">
+        <a href="https://bestplantfriend.com/blogs/blogs/how-to-prune-and-shape-your-houseplant" target="_blank"
+          rel="noopener noreferrer">
           <img src="images/care4.png" alt="Branching Out: How to Shape Your Houseplants">
           <p>Branching Out: How to Shape Your Houseplants</p>
         </a>
       </div>
 
       <div class="care-item">
-        <a href="https://www.thespruce.com/tips-on-caring-for-houseplants-in-the-winter-1403001">
+        <a href="https://www.thespruce.com/tips-on-caring-for-houseplants-in-the-winter-1403001" target="_blank"
+          rel="noopener noreferrer">
           <img src="images/care5.png" alt="Caring for Houseplants in Winter">
           <p>Caring for Houseplants in Winter</p>
         </a>
       </div>
 
       <div class="care-item">
-        <a href="https://justhouseplants.com/benefits-of-indoor-plants/">
+        <a href="https://justhouseplants.com/benefits-of-indoor-plants/" target="_blank" rel="noopener noreferrer">
           <img src="images/care6.png" alt="The Many Benefits of Houseplants">
           <p>The Many Benefits of Houseplants</p>
         </a>
       </div>
 
       <div class="care-item">
-        <a href="https://www.happyhouseplants.co.uk/blogs/houseplant-blog/pets-and-plants-how-to-keep-both-safe-and-happy-at-home">
+        <a href="https://www.happyhouseplants.co.uk/blogs/houseplant-blog/pets-and-plants-how-to-keep-both-safe-and-happy-at-home"
+          target="_blank" rel="noopener noreferrer">
           <img src="images/care7.png" alt="Plants and Pets: One Big Happy Family">
           <p>Plants and Pets: One Big Happy Family</p>
         </a>
       </div>
 
       <div class="care-item">
-        <a href="https://gardenerspath.com/plants/houseplants/pests/">
+        <a href="https://gardenerspath.com/plants/houseplants/pests/" target="_blank" rel="noopener noreferrer">
           <img src="images/care8.png" alt="Bugging Out: Houseplant Pests and Diseases">
           <p>Bugging Out: Houseplant Pests and Diseases</p>
         </a>
       </div>
 
       <div class="care-item">
-        <a href="https://www.delineateyourdwelling.com/glossary-of-important-indoor-houseplant-words/">
+        <a href="https://www.delineateyourdwelling.com/glossary-of-important-indoor-houseplant-words/" target="_blank"
+          rel="noopener noreferrer">
           <img src="images/care9.png" alt="Glossary of Houseplant Terminology">
           <p>Glossary of Houseplant Terminology</p>
         </a>
       </div>
 
       <div class="care-item">
-        <a href="https://shuncy.com/article/should-you-feed-newly-planted-plants">
+        <a href="https://shuncy.com/article/should-you-feed-newly-planted-plants" target="_blank"
+          rel="noopener noreferrer">
           <img src="images/care10.png" alt="To Feed or Not to Feed">
           <p>To Feed or Not to Feed</p>
         </a>
       </div>
 
       <div class="care-item">
-        <a href="https://indoorplanthub.com/17-houseplant-tools-for-your-indoor-garden/">
+        <a href="https://indoorplanthub.com/17-houseplant-tools-for-your-indoor-garden/" target="_blank"
+          rel="noopener noreferrer">
           <img src="images/care11.png" alt="The Essential Equipment for Happy Houseplants">
           <p>The Essential Equipment for Happy Houseplants</p>
         </a>
       </div>
 
       <div class="care-item">
-        <a href="https://positivebloom.com/garden-watering-mistakes/">
+        <a href="https://positivebloom.com/garden-watering-mistakes/" target="_blank" rel="noopener noreferrer">
           <img src="images/care12.png" alt="Am I Watering It All Wrong?">
           <p>Am I Watering It All Wrong?</p>
         </a>
       </div>
 
       <div class="care-item">
-        <a href="https://www.homesandgardens.com/life-design/how-to-move-with-houseplants">
+        <a href="https://www.homesandgardens.com/life-design/how-to-move-with-houseplants" target="_blank"
+          rel="noopener noreferrer">
           <img src="images/care13.png" alt="How to Move Your Houseplants">
           <p>How to Move Your Houseplants</p>
         </a>
       </div>
 
       <div class="care-item">
-        <a href="https://tedsgardens.com/how-to-tell-what-kind-of-light-you-have-for-your-houseplants/">
+        <a href="https://tedsgardens.com/how-to-tell-what-kind-of-light-you-have-for-your-houseplants/" target="_blank"
+          rel="noopener noreferrer">
           <img src="images/care14.png" alt="What Type of Lighting Do I Have, Anyway?">
           <p>What Type of Lighting Do I Have, Anyway?</p>
         </a>
       </div>
 
       <div class="care-item">
-        <a href="https://www.allthatgrows.in/blogs/posts/how-and-when-to-repot-plants">
+        <a href="https://www.allthatgrows.in/blogs/posts/how-and-when-to-repot-plants" target="_blank"
+          rel="noopener noreferrer">
           <img src="images/care15.png" alt="How to Pot and When to Repot">
           <p>How to Pot and When to Repot</p>
         </a>
       </div>
 
       <div class="care-item">
-        <a href="https://www.gardeningtipsandtools.com/houseplants/houseplant-grooming-and-cleaning-for-optimal-health-and-beauty/">
+        <a href="https://www.gardeningtipsandtools.com/houseplants/houseplant-grooming-and-cleaning-for-optimal-health-and-beauty/"
+          target="_blank" rel="noopener noreferrer">
           <img src="images/care16.png" alt="Grooming for Houseplants">
           <p>Grooming for Houseplants</p>
         </a>
@@ -147,21 +184,49 @@
 
   <!-- Footer -->
   <footer>
-    <h3>Stay connected and join our growing community! <br>Follow us on social media for the latest updates, tips and inspiration for your indoor garden.</h3><br>
+    <h3>Stay connected and join our growing community! <br>Follow us on social media for the latest updates, tips and
+      inspiration for your indoor garden.</h3><br>
     <div class="social-media">
-      <a href="https://www.instagram.com/">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
         <img src="images/instagram.png" alt="Instagram">
       </a>
-      <a href="https://x.com/">
+      <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
         <img src="images/twitter.png" alt="Twitter">
       </a>
-      <a href="https://pinterest.com/">
+      <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer">
         <img src="images/pinterest.png" alt="Pinterest">
       </a>
     </div>
     <br>
-    <p style="text-align: right;">&copy; 2024 PlantasticCare. All rights reserved.</p>
+    <p style="text-align: right;">&copy; <span id="current-year">2024</span> PlantasticCare. All rights reserved.</p>
   </footer>
 
+  <script>
+    // Update auth navigation on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      const authNav = document.getElementById('auth-nav');
+
+      if (API_CONFIG.isLoggedIn()) {
+        const user = API_CONFIG.getUser();
+        authNav.innerHTML = `
+          <a href="login.html" class="user-greeting" title="View Profile & Favorites">👤 ${sanitize.escapeHtml(user?.username || 'User')}</a>
+          <a href="#" class="logout-btn" onclick="handleLogout(event)">Logout</a>
+        `;
+      } else {
+        authNav.innerHTML = '<h3><a href="login.html">Login</a></h3>';
+      }
+    });
+
+    function handleLogout(e) {
+      e.preventDefault();
+      API_CONFIG.clearAuth();
+      Toast.success('Logged out successfully!');
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    }
+  </script>
+
 </body>
+
 </html>

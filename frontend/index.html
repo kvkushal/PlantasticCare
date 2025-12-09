@@ -1,128 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PlantasticCare – Simplifying Plant Care</title>
+  <meta name="description"
+    content="PlantasticCare helps plant lovers grow and care for indoor plants with comprehensive guides, care tips, and an interactive community forum.">
+  <meta name="theme-color" content="#2a472e">
   <link rel="icon" href="images/icon.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="images/icon.png">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/config.js"></script>
+  <script src="js/enhancements.js" defer></script>
   <script src="js/index.js" defer></script>
+  <script>
+    // Register Service Worker for PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('PlantasticCare: Service Worker registered'))
+          .catch(err => console.log('PlantasticCare: SW registration failed', err));
+      });
+    }
+  </script>
+  <style>
+    /* Auth navigation styles */
+    .auth-nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .user-greeting {
+      color: #2a472e;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .logout-link {
+      color: #dc3545 !important;
+      cursor: pointer;
+    }
+
+    .logout-link:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- Header -->
-<header>
-  <div class="logo-container">
-    <a href="index.html"><img src="images/logo1.png" alt="PlantasticCare Logo" class="logo"></a>
-  </div>
-
-  <nav>
-    <h3><a href="index.html">Home</a></h3>
-    <h3><a href="about.html">About</a></h3>
-    <h3><a href="plants.html">Plants</a></h3>
-    <h3><a href="care.html">Care</a></h3>
-    <h3><a href="forum.html">Community</a></h3>
-    <h3><a href="login.html">Login</a></h3>
-  </nav>
-</header>
-
-<main>
-  <!-- Intro Section -->
-  <section class="intro">
-    <div class="intro-text">
-      <h2>Get to Know Your Plants</h2>
-      <p>Comprehensive guides for all your favorite houseplants – covering watering, lighting needs, propagation, and diagnosing common problems. A growing resource, de-mystifying houseplant care for beginners and enthusiasts alike.</p>
-      <a href="plants.html">
-        <button>Explore Plants</button>
-      </a>
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <a href="index.html"><img src="images/logo1.png" alt="PlantasticCare Logo" class="logo"></a>
     </div>
-    <div class="intro-image">
-      <img src="images/home1.png" alt="Plant Image">
-    </div>
-  </section>
 
-  <section class="featured-highlights">
-    <h2>Featured Highlights</h2>
-    <div class="highlights-grid">
-       
+    <nav>
+      <h3><a href="index.html">Home</a></h3>
+      <h3><a href="about.html">About</a></h3>
+      <h3><a href="plants.html">Plants</a></h3>
+      <h3><a href="care.html">Care</a></h3>
+      <h3><a href="forum.html">Community</a></h3>
+      <div id="auth-nav" class="auth-nav">
+        <h3><a href="login.html">Login</a></h3>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Intro Section -->
+    <section class="intro">
+      <div class="intro-text">
+        <h2>Get to Know Your Plants</h2>
+        <p>Comprehensive guides for all your favorite houseplants – covering watering, lighting needs, propagation, and
+          diagnosing common problems. A growing resource, de-mystifying houseplant care for beginners and enthusiasts
+          alike.</p>
+        <a href="plants.html">
+          <button>Explore Plants</button>
+        </a>
+      </div>
+      <div class="intro-image">
+        <img src="images/home1.png" alt="Beautiful indoor plants collection">
+      </div>
+    </section>
+
+    <section class="featured-highlights">
+      <h2>Featured Highlights</h2>
+      <div class="highlights-grid">
+
         <div class="highlight-item">
           <a href="care.html">
-            <img src="images/home2.png" alt="Plant Care Tips"><br><br><br><br><br>
+            <img src="images/home2.png" alt="Plant Care Tips">
             <h3>Plant Care Tips</h3>
             <p>Master the art of watering, pruning, and maintaining your plants to keep them thriving.</p>
-           </a> 
+          </a>
         </div>
-        
+
         <div class="highlight-item">
-          <a href="https://gardenerspath.com/plants/houseplants/pests/">
+          <a href="https://gardenerspath.com/plants/houseplants/pests/" target="_blank" rel="noopener noreferrer">
             <img src="images/care17.png" alt="Solutions for Common Problems">
             <h3>Solutions for Common Problems</h3>
             <p>Quickly identify and resolve common plant issues like pests, yellowing leaves and more.</p>
-            </a>
+          </a>
         </div>
-        
+
         <div class="highlight-item">
-          <a href="https://www.allisajacobs.com/how-to-style-house-plants/">
-            <img src="images/home6.png" alt="Plant Decor Ideas"><br><br><br><br>
+          <a href="https://www.allisajacobs.com/how-to-style-house-plants/" target="_blank" rel="noopener noreferrer">
+            <img src="images/home6.png" alt="Plant Decor Ideas">
             <h3>Plant Decor Ideas</h3>
             <p>Transform your living spaces with stylish indoor plant arrangements and creative decor tips.</p>
-            </a>
+          </a>
         </div>
-        
-    </div>
-</section>
 
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <h2>What Our Users Say</h2>
-    <div class="testimonials-container">
-      <blockquote>
-        <p>"Thanks to PlantasticCare, my indoor plants are thriving like never before!"</p>
-        <cite>- Alex Green</cite>
-      </blockquote>
-      <blockquote>
-        <p>"Their guides helped me identify and solve my plant’s issues instantly."</p>
-        <cite>- Jamie Leaf</cite>
-      </blockquote>
-    </div>
-  </section>
+      </div>
+    </section>
 
- <!-- Newsletter -->
-<section class="newsletter">
-  <h2>Stay Updated</h2>
-  <p>Subscribe to our newsletter for plant care tips and exclusive updates.</p>
-  <form id="subscribeForm" action="#" method="POST">
-    <label for="email" class="visually-hidden">Email Address</label>
-    <input 
-      type="email" 
-      id="email" 
-      name="email" 
-      placeholder="Enter your email" 
-      required 
-      aria-label="Enter your email to subscribe"
-    >
-    <button type="submit">Subscribe</button>
-  </form>
-</section>
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <h2>What Our Users Say</h2>
+      <div class="testimonials-container">
+        <blockquote>
+          <p>"Thanks to PlantasticCare, my indoor plants are thriving like never before!"</p>
+          <cite>- Alex Green</cite>
+        </blockquote>
+        <blockquote>
+          <p>"Their guides helped me identify and solve my plant's issues instantly."</p>
+          <cite>- Jamie Leaf</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <h2>Stay Updated</h2>
+      <p>Subscribe to our newsletter for plant care tips and exclusive updates.</p>
+      <form id="subscribeForm" action="#" method="POST">
+        <label for="email" class="visually-hidden">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required
+          aria-label="Enter your email to subscribe" autocomplete="email">
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
 
 
-<!-- Footer -->
-<footer>
-  <h3>Stay connected and join our growing community! <br>Follow us on social media for the latest updates, tips, and inspiration for your indoor garden.</h3><br>
-  <div class="social-media">
-    <a href="https://www.instagram.com/">
-      <img src="images/instagram.png" alt="Instagram">
-    </a>
-    <a href="https://x.com/">
-      <img src="images/twitter.png" alt="Twitter">
-    </a>
-    <a href="https://pinterest.com/">
-      <img src="images/pinterest.png" alt="Pinterest">
-    </a>
-  </div>
-  <br>
-  <p style="text-align: right;">&copy; 2024 PlantasticCare. All rights reserved.</p>
-</footer>
+    <!-- Footer -->
+    <footer>
+      <h3>Stay connected and join our growing community! <br>Follow us on social media for the latest updates, tips, and
+        inspiration for your indoor garden.</h3><br>
+      <div class="social-media">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+          <img src="images/instagram.png" alt="Follow us on Instagram">
+        </a>
+        <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+          <img src="images/twitter.png" alt="Follow us on Twitter">
+        </a>
+        <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer">
+          <img src="images/pinterest.png" alt="Follow us on Pinterest">
+        </a>
+      </div>
+      <br>
+      <p style="text-align: right;">&copy; <span id="current-year">2024</span> PlantasticCare. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Update auth navigation on page load
+      document.addEventListener('DOMContentLoaded', function () {
+        const authNav = document.getElementById('auth-nav');
+
+        if (API_CONFIG.isLoggedIn()) {
+          const user = API_CONFIG.getUser();
+          authNav.innerHTML = `
+          <a href="login.html" class="user-greeting" title="View Profile & Favorites">👤 ${sanitize.escapeHtml(user?.username || 'User')}</a>
+          <a href="#" class="logout-btn" onclick="handleLogout(event)">Logout</a>
+        `;
+        } else {
+          authNav.innerHTML = '<h3><a href="login.html">Login</a></h3>';
+        }
+      });
+
+      function handleLogout(e) {
+        e.preventDefault();
+        API_CONFIG.clearAuth();
+        Toast.success('Logged out successfully!');
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      }
+    </script>
 
 </body>
+
 </html>

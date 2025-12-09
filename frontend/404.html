@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - PlantasticCare</title>
+    <meta name="description" content="Oops! The page you're looking for couldn't be found.">
+    <meta name="theme-color" content="#2a472e">
+    <link rel="icon" href="images/icon.png">
+    <link rel="manifest" href="manifest.json">
+    <script src="js/config.js"></script>
+    <script src="js/enhancements.js" defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f9f6f2, #e8f5e9);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .error-container {
+            text-align: center;
+            padding: 40px;
+            max-width: 600px;
+        }
+
+        .error-icon {
+            font-size: 120px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #2a472e;
+            margin-bottom: 15px;
+        }
+
+        .error-code {
+            font-size: 6rem;
+            font-weight: bold;
+            color: #2a472e;
+            opacity: 0.2;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn-home {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #2a472e, #4a7a39);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(42, 71, 46, 0.3);
+        }
+
+        .btn-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(42, 71, 46, 0.4);
+        }
+
+        .suggestions {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .suggestions h3 {
+            color: #2a472e;
+            margin-bottom: 15px;
+        }
+
+        .suggestions ul {
+            list-style: none;
+        }
+
+        .suggestions li {
+            margin: 10px 0;
+        }
+
+        .suggestions a {
+            color: #4a7a39;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .suggestions a:hover {
+            color: #2a472e;
+            text-decoration: underline;
+        }
+
+        /* Dark mode support */
+        body.dark-mode {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #e0e0e0;
+        }
+
+        body.dark-mode h1 {
+            color: #4ade80;
+        }
+
+        body.dark-mode p {
+            color: #a0a0a0;
+        }
+
+        body.dark-mode .error-code {
+            color: #4ade80;
+        }
+
+        body.dark-mode .suggestions h3 {
+            color: #4ade80;
+        }
+
+        body.dark-mode .suggestions a {
+            color: #6abe55;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-code">404</div>
+
+    <div class="error-container">
+        <div class="error-icon">🌿</div>
+        <h1>Oops! Lost in the garden?</h1>
+        <p>
+            The page you're looking for seems to have wilted away.
+            Don't worry, let's get you back to greener pastures!
+        </p>
+        <a href="index.html" class="btn-home">🏠 Back to Home</a>
+
+        <div class="suggestions">
+            <h3>You might be looking for:</h3>
+            <ul>
+                <li>🌱 <a href="plants.html">Browse our plant collection</a></li>
+                <li>📚 <a href="care.html">Read care guides</a></li>
+                <li>💬 <a href="forum.html">Join the community forum</a></li>
+                <li>ℹ️ <a href="about.html">Learn about us</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

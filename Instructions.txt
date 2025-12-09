@@ -1,0 +1,10 @@
+To use the website functionality:
+-open cmd
+-go to backend dir (cd backend)
+-run this command : npm start
+
+we will get this:
+> backend@1.0.0 start
+> node server.js
+Server running on port 5000
+MongoDB connected

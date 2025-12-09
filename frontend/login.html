@@ -1,299 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Login - PlantasticCare</title>
+  <meta name="description"
+    content="Login to PlantasticCare to access your plant care dashboard, favorites, and community forum.">
+  <meta name="theme-color" content="#2a472e">
   <link rel="icon" href="images/icon.png">
-</head>
-<style>
-  /* General*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <link rel="manifest" href="manifest.json">
+  <script src="js/config.js"></script>
+  <script src="js/enhancements.js" defer></script>
+  <style>
+    /* General*/
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f9f6f2;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f6f2;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-/* Header */
-.logo-container {
-  display: flex;
-  align-items: center; 
-}
+    /* Header */
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
 
-.logo {
-  max-width: 250px;
-  height: auto;
-}
+    .logo {
+      max-width: 250px;
+      height: auto;
+    }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  align-items: center;
-  position: sticky;
-  width: 100%;
-}
+    header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      align-items: center;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
 
-/* Navigation*/
-header nav {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
+    /* Navigation*/
+    header nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
 
-header nav a {
-  color: #2a472e;
-  text-decoration: none;
-  font-weight: bold;
-}
+    header nav a {
+      color: #2a472e;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-header nav a:hover {
-  text-decoration: underline;
-}
+    header nav a:hover {
+      text-decoration: underline;
+    }
 
-/* Contact Form*/
-.contact-form {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 80%;
-  max-width: 500px;
-  margin: 30px auto;
-}
+    /* Main content area */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      width: 100%;
+    }
 
-.contact-form h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  color: #2a472e;
-  margin-bottom: 20px;
-}
+    /* Contact Form*/
+    .contact-form {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 450px;
+    }
 
-.contact-form label {
-  display: block;
-  font-size: 1rem;
-  margin-bottom: 5px;
-  color: #333;
-}
+    .contact-form h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #2a472e;
+      margin-bottom: 25px;
+    }
 
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1rem;
-}
+    .contact-form label {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 5px;
+      color: #333;
+      font-weight: 500;
+    }
 
-.contact-form button {
-  background-color: #2a472e;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  width: 50%;
-  margin: 0 auto;
-  display: block;
-}
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 18px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.contact-form button:hover {
-  background-color: #1d3521;
-}
+    .contact-form input:focus {
+      border-color: #2a472e;
+      box-shadow: 0 0 5px rgba(42, 71, 46, 0.2);
+      outline: none;
+    }
 
-/* Modal */
+    .contact-form button {
+      background-color: #2a472e;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
 
+    .contact-form button:hover {
+      background-color: #1d3521;
+      transform: translateY(-1px);
+    }
+
+    .contact-form button:disabled {
+      background-color: #88a88c;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Modal */
     .modal {
-        display: none; 
-        position: fixed;
-        z-index: 1; 
-        left: 0;
-        top: 0;
-        width: 100%; 
-        height: 100%; 
-        background-color: rgba(0, 0, 0, 0.4);
-        padding-top: 60px;
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(2px);
     }
 
     /* Modal Content */
     .modal-content {
-        background-color: #fff;
-        margin: 5% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        max-width: 400px;
-        border-radius: 8px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 30px;
+      border: none;
+      width: 90%;
+      max-width: 450px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      position: relative;
+      animation: modalSlideIn 0.3s ease;
+    }
+
+    @keyframes modalSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Close Button */
     .close {
-        color: #aaa;
-        font-size: 28px;
-        font-weight: bold;
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        cursor: pointer;
+      color: #999;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      cursor: pointer;
+      transition: color 0.2s ease;
     }
 
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
+    .close:hover {
+      color: #333;
     }
 
     /* Modal Form */
     .modal form {
-        display: flex;
-        flex-direction: column;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal h2 {
+      text-align: center;
+      color: #2a472e;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
     }
 
     .modal form label {
-        font-size: 1rem;
-        margin-bottom: 5px;
-        color: #333;
+      font-size: 1rem;
+      margin-bottom: 5px;
+      color: #333;
+      font-weight: 500;
     }
 
     .modal form input {
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 1rem;
+      padding: 12px;
+      margin-bottom: 18px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .modal form input:focus {
+      border-color: #2a472e;
+      outline: none;
     }
 
     .modal form button {
-        background-color: #2a472e;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 1.1rem;
-        cursor: pointer;
+      background-color: #2a472e;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     .modal form button:hover {
-        background-color: #1d3521;
+      background-color: #1d3521;
+    }
+
+    .modal form button:disabled {
+      background-color: #88a88c;
+      cursor: not-allowed;
     }
 
     /* Modal Link Styling (Sign Up Link) */
     .modal-link {
-        color: #2a472e;
-        cursor: pointer;
-        font-weight: bold;
+      color: #2a472e;
+      cursor: pointer;
+      font-weight: bold;
+      transition: color 0.2s ease;
     }
 
     .modal-link:hover {
-        text-decoration: underline;
+      color: #1d3521;
+      text-decoration: underline;
     }
 
-    /* Login Form Styles */
-    .login-form {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        width: 80%;
-        max-width: 400px;
-        margin: 50px auto;
+    /* Signup link container */
+    .signup-container {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
     }
 
-    .login-form h2 {
-        text-align: center;
-        font-size: 1.8rem;
-        color: #2a472e;
-        margin-bottom: 20px;
+    /* Password requirements */
+    .password-hint {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: -12px;
+      margin-bottom: 15px;
     }
 
-    .login-form label {
-        display: block;
-        font-size: 1rem;
-        margin-bottom: 5px;
-        color: #333;
+    /* User Dashboard */
+    .dashboard {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
     }
 
-    .login-form input {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 1rem;
+    .dashboard h2 {
+      color: #2a472e;
+      margin-bottom: 20px;
     }
 
-    .login-form button {
-        background-color: #2a472e;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 1.1rem;
-        cursor: pointer;
+    .dashboard .user-avatar {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #2a472e, #4a7a39);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2rem;
+      color: white;
     }
 
-    .login-form button:hover {
-        background-color: #1d3521;
+    .dashboard .user-info {
+      margin-bottom: 25px;
     }
 
-    .login-form .signup-link {
-        text-align: center;
-        margin-top: 20px;
+    .dashboard .user-info p {
+      margin: 8px 0;
+      color: #555;
     }
 
-    .login-form .signup-link a {
-        color: #2a472e;
-        font-weight: bold;
-        text-decoration: none;
+    .dashboard .user-info strong {
+      color: #2a472e;
     }
 
-    .login-form .signup-link a:hover {
-        text-decoration: underline;
+    .dashboard-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
-/* Footer*/
-footer {
-    background-color: #3e3e3e;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    width: 100%;
-}
+    .dashboard-actions a,
+    .dashboard-actions button {
+      display: block;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
 
-footer .social-media {
-    margin-top: 10px;
-}
+    .btn-primary {
+      background-color: #2a472e;
+      color: white;
+    }
 
-footer .social-media a {
-    margin: 0 15px;
-    display: inline-block;
-}
+    .btn-primary:hover {
+      background-color: #1d3521;
+    }
 
-footer .social-media img {
-    width: 30px;
-    height: 30px;
-}
+    .btn-secondary {
+      background-color: #f0f0f0;
+      color: #333;
+    }
 
-</style>
+    .btn-secondary:hover {
+      background-color: #e0e0e0;
+    }
+
+    .btn-danger {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background-color: #c82333;
+    }
+
+    /* Favorites Section */
+    .favorites-section {
+      width: 100%;
+      margin: 25px 0;
+      text-align: left;
+    }
+
+    .favorites-section h3 {
+      color: #2a472e;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .favorites-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      max-height: 200px;
+      overflow-y: auto;
+      padding: 10px;
+      background: #f8f9fa;
+      border-radius: 10px;
+    }
+
+    .favorite-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: #2a472e;
+      border: 1px solid #a5d6a7;
+    }
+
+    .favorite-item .plant-name {
+      font-weight: 500;
+    }
+
+    .favorite-item .remove-btn {
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .favorite-item .remove-btn:hover {
+      background: #ee5a5a;
+      transform: scale(1.1);
+    }
+
+    .no-favorites {
+      color: #888;
+      font-style: italic;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .loading-text {
+      color: #888;
+      text-align: center;
+    }
+
+    /* Footer*/
+    footer {
+      background-color: #3e3e3e;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+      margin-top: auto;
+    }
+
+    footer .social-media {
+      margin-top: 10px;
+    }
+
+    footer .social-media a {
+      margin: 0 15px;
+      display: inline-block;
+    }
+
+    footer .social-media img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.2s ease;
+    }
+
+    footer .social-media img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
 
 <body>
   <!-- Header -->
@@ -301,7 +487,7 @@ footer .social-media img {
     <div class="logo-container">
       <a href="index.html"><img src="images/logo1.png" alt="PlantasticCare Logo" class="logo"></a>
     </div>
-  
+
     <nav>
       <h3><a href="index.html">Home</a></h3>
       <h3><a href="about.html">About</a></h3>
@@ -312,194 +498,311 @@ footer .social-media img {
     </nav>
   </header>
 
-<!-- Login Section -->
-<section class="contact-form">
-  <h2>Login</h2>
-  <form id="contact-form" action="#" method="POST">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
+  <main>
+    <!-- Login Section (shown when not logged in) -->
+    <section class="contact-form" id="login-section">
+      <h2>Login</h2>
+      <form id="login-form" action="#" method="POST">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="email">
 
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required
+          autocomplete="current-password">
 
-    <button type="submit">Login</button>
-  </form>
-  <br>
-  <p>Don't have an account?&nbsp;&nbsp;<span class="modal-link" id="signup-link" style="color: #2a472e;">Sign up here</span></p>
-</section>
+        <button type="submit" id="login-btn">Login</button>
+      </form>
+      <div class="signup-container">
+        <p>Don't have an account? <span class="modal-link" id="signup-link">Sign up here</span></p>
+      </div>
+    </section>
 
-<!-- Modal for Sign Up -->
-<div id="signupModal" class="modal">
-  <div class="modal-content">
-    <span class="close" id="closeSignupModal">&times;</span>
-    <h2>Sign Up</h2>
-    <form id="signup-form" action="#" method="POST">
-      <label for="full-name">Full Name</label>
-      <input type="text" id="full-name" name="full-name" required>
+    <!-- User Dashboard (shown when logged in) -->
+    <section class="dashboard" id="dashboard-section" style="display: none;">
+      <div class="user-avatar" id="user-avatar">🌱</div>
+      <h2>Welcome back!</h2>
+      <div class="user-info">
+        <p><strong>Name:</strong> <span id="display-username">User</span></p>
+        <p><strong>Email:</strong> <span id="display-email">user@example.com</span></p>
+      </div>
 
-      <label for="new-password">Password</label>
-      <input type="password" id="new-password" name="new-password" required>
+      <!-- Favorites Section -->
+      <div class="favorites-section" id="favorites-section">
+        <h3>❤️ My Favorite Plants</h3>
+        <div id="favorites-list" class="favorites-list">
+          <p class="loading-text">Loading favorites...</p>
+        </div>
+      </div>
 
-      <label for="new-email">Email Address</label>
-      <input type="email" id="new-email" name="new-email" required>
+      <div class="dashboard-actions">
+        <a href="plants.html" class="btn-primary">🌿 Browse Plants</a>
+        <a href="forum.html" class="btn-primary">💬 Visit Forum</a>
+        <a href="care.html" class="btn-secondary">📚 Care Guides</a>
+        <button class="btn-danger" id="logout-btn">🚪 Logout</button>
+      </div>
+    </section>
+  </main>
 
-      <label for="new-phone">Phone Number</label>
-      <input type="tel" id="new-phone" name="new-phone" required>
+  <!-- Modal for Sign Up -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeSignupModal">&times;</span>
+      <h2>Create Account</h2>
+      <form id="signup-form" action="#" method="POST">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required
+          autocomplete="name">
 
-      <button type="submit">Sign Up</button>
-    </form>
+        <label for="new-email">Email Address</label>
+        <input type="email" id="new-email" name="new-email" placeholder="Enter your email" required
+          autocomplete="email">
+
+        <label for="new-phone">Phone Number</label>
+        <input type="tel" id="new-phone" name="new-phone" placeholder="10 digit phone number" required
+          pattern="[0-9]{10}" autocomplete="tel">
+
+        <label for="new-password">Password</label>
+        <input type="password" id="new-password" name="new-password" placeholder="Create a strong password" required
+          minlength="8" autocomplete="new-password">
+        <p class="password-hint">At least 8 characters with uppercase, lowercase, number, and special character</p>
+
+        <button type="submit" id="signup-btn">Create Account</button>
+      </form>
+    </div>
   </div>
-</div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // -------------------------- Login Form --------------------------
-    const loginForm = document.getElementById("contact-form");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const loginSection = document.getElementById("login-section");
+      const dashboardSection = document.getElementById("dashboard-section");
+      const loginForm = document.getElementById("login-form");
+      const signupForm = document.getElementById("signup-form");
+      const modal = document.getElementById("signupModal");
+      const signupLink = document.getElementById("signup-link");
+      const closeModal = document.getElementById("closeSignupModal");
+      const logoutBtn = document.getElementById("logout-btn");
 
-    loginForm.addEventListener("submit", async function (event) {
-      event.preventDefault(); // Prevent the default form submission
+      // Check if user is already logged in
+      if (API_CONFIG.isLoggedIn()) {
+        showDashboard();
+      }
 
-      // Collect form data
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
+      // Show dashboard for logged in users
+      async function showDashboard() {
+        try {
+          const data = await API_CONFIG.request('/verify-token');
+          if (data.valid) {
+            loginSection.style.display = "none";
+            dashboardSection.style.display = "block";
+            document.getElementById("display-username").textContent = data.user.username;
+            document.getElementById("display-email").textContent = data.user.email;
+            document.getElementById("user-avatar").textContent = data.user.username.charAt(0).toUpperCase();
 
-      // Validate the inputs
-      if (email && password) {
+            // Save user data
+            API_CONFIG.saveAuth(localStorage.getItem(API_CONFIG.TOKEN_KEY), data.user);
+
+            // Load favorites
+            loadFavorites();
+          }
+        } catch (error) {
+          // Token invalid, show login
+          API_CONFIG.clearAuth();
+          loginSection.style.display = "block";
+          dashboardSection.style.display = "none";
+        }
+      }
+
+      // Load and display user favorites
+      async function loadFavorites() {
+        const favoritesList = document.getElementById('favorites-list');
+
+        try {
+          const data = await API_CONFIG.request('/favorites');
+          const favorites = data.favorites || [];
+
+          if (favorites.length === 0) {
+            favoritesList.innerHTML = '<p class="no-favorites">No favorites yet. Add some plants from the Plants page!</p>';
+            return;
+          }
+
+          favoritesList.innerHTML = favorites.map(plantName => `
+            <div class="favorite-item" data-plant="${sanitize.escapeHtml(plantName)}">
+              <span class="plant-name">🌿 ${sanitize.escapeHtml(plantName)}</span>
+              <button class="remove-btn" onclick="removeFavorite('${plantName.replace(/'/g, "\\'")}')">×</button>
+            </div>
+          `).join('');
+        } catch (error) {
+          favoritesList.innerHTML = '<p class="no-favorites">Failed to load favorites.</p>';
+        }
+      }
+
+      // Remove a plant from favorites (global function)
+      window.removeFavorite = async function (plantName) {
+        try {
+          await API_CONFIG.request(`/favorites/${encodeURIComponent(plantName)}`, {
+            method: 'DELETE'
+          });
+          Toast.success(`${plantName} removed from favorites`);
+          loadFavorites();
+        } catch (error) {
+          Toast.error('Failed to remove from favorites');
+        }
+      }
+
+      // Login Form Submission
+      loginForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const loginBtn = document.getElementById("login-btn");
+
+        if (!email || !password) {
+          Toast.warning("Please fill in all fields.");
+          return;
+        }
+
         if (!validateEmail(email)) {
-          alert("Please enter a valid email address.");
-        } else {
-          try {
-            // Send login data to backend
-            const response = await fetch("http://localhost:5000/login", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ email, password })
-            });
-
-            const result = await response.json();
-
-            if (response.ok) {
-              // On successful login, save the JWT token in localStorage
-              alert("Login successful!");
-              localStorage.setItem("token", result.token); // Save the JWT token
-              loginForm.reset(); // Reset the form after successful login
-              window.location.href = "index.html"; // Redirect to another page (dashboard/home)
-            } else {
-              alert(result.error || 'Login failed. Please try again.');
-            }
-          } catch (error) {
-            console.error("Error:", error);
-            alert("Something went wrong. Please try again.");
-          }
+          Toast.warning("Please enter a valid email address.");
+          return;
         }
-      } else {
-        alert("Please fill in all fields.");
-      }
-    });
 
-    // -------------------------- Modal for Sign-Up --------------------------
-    const modal = document.getElementById("signupModal");
-    const signupLink = document.getElementById("signup-link");
-    const closeModal = document.getElementById("closeSignupModal");
-    const signupForm = document.getElementById("signup-form");
+        loginBtn.disabled = true;
+        loginBtn.textContent = "Logging in...";
 
-    signupLink.addEventListener("click", function () {
-      modal.style.display = "block";
-    });
+        try {
+          const result = await API_CONFIG.request('/login', {
+            method: 'POST',
+            body: { email, password },
+            auth: false
+          });
 
-    closeModal.addEventListener("click", function () {
-      modal.style.display = "none";
-    });
+          API_CONFIG.saveAuth(result.token, result.user);
+          Toast.success("Login successful!");
+          loginForm.reset();
 
-    window.addEventListener("click", function (event) {
-      if (event.target === modal) {
+          setTimeout(() => {
+            showDashboard();
+          }, 500);
+        } catch (error) {
+          Toast.error(error.message || "Login failed. Please try again.");
+        } finally {
+          loginBtn.disabled = false;
+          loginBtn.textContent = "Login";
+        }
+      });
+
+      // Sign Up Modal Handling
+      signupLink.addEventListener("click", function () {
+        modal.style.display = "block";
+      });
+
+      closeModal.addEventListener("click", function () {
         modal.style.display = "none";
-      }
-    });
+      });
 
-    // Sign-Up Form Submission
-    signupForm.addEventListener("submit", async function (event) {
-      event.preventDefault(); // Prevent the default form submission
-
-      const signupUsername = document.getElementById("full-name").value;
-      const signupEmail = document.getElementById("new-email").value;
-      const signupPhone = document.getElementById("new-phone").value;
-      const signupPassword = document.getElementById("new-password").value;
-
-      if (signupUsername && signupEmail && signupPhone && signupPassword) {
-        if (!validatePhoneNumber(signupPhone)) {
-          alert("Phone number must be 10 digits.");
-        } else if (!validateEmail(signupEmail)) {
-          alert("Please enter a valid email address.");
-        } else if (!validatePassword(signupPassword)) {
-          alert("Password must be at least 8 characters, include an uppercase letter, a lowercase letter, a number, and a special character.");
-        } else {
-          try {
-            const response = await fetch("http://localhost:5000/register", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                username: signupUsername,
-                email: signupEmail,
-                phone: signupPhone,
-                password: signupPassword
-              })
-            });
-
-            const result = await response.json();
-
-            if (response.ok) {
-              alert("Signup successful!");
-              signupForm.reset(); // Reset the form after successful signup
-              modal.style.display = "none"; // Close the modal after successful signup
-            } else {
-              alert(result.error || 'Signup failed. Please try again.');
-            }
-          } catch (error) {
-            console.error("Error:", error);
-            alert("Something went wrong. Please try again.");
-          }
+      window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
         }
-      } else {
-        alert("Please fill in all fields.");
+      });
+
+      // Sign-Up Form Submission
+      signupForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const username = document.getElementById("full-name").value.trim();
+        const email = document.getElementById("new-email").value.trim();
+        const phone = document.getElementById("new-phone").value.trim();
+        const password = document.getElementById("new-password").value;
+        const signupBtn = document.getElementById("signup-btn");
+
+        if (!username || !email || !phone || !password) {
+          Toast.warning("Please fill in all fields.");
+          return;
+        }
+
+        if (!validatePhoneNumber(phone)) {
+          Toast.warning("Phone number must be 10 digits.");
+          return;
+        }
+
+        if (!validateEmail(email)) {
+          Toast.warning("Please enter a valid email address.");
+          return;
+        }
+
+        if (!validatePassword(password)) {
+          Toast.warning("Password must be at least 8 characters with uppercase, lowercase, number, and special character.");
+          return;
+        }
+
+        signupBtn.disabled = true;
+        signupBtn.textContent = "Creating account...";
+
+        try {
+          await API_CONFIG.request('/register', {
+            method: 'POST',
+            body: { username, email, phone, password },
+            auth: false
+          });
+
+          Toast.success("Account created successfully! Please login.");
+          signupForm.reset();
+          modal.style.display = "none";
+        } catch (error) {
+          Toast.error(error.message || "Registration failed. Please try again.");
+        } finally {
+          signupBtn.disabled = false;
+          signupBtn.textContent = "Create Account";
+        }
+      });
+
+      // Logout
+      logoutBtn.addEventListener("click", function () {
+        API_CONFIG.clearAuth();
+        Toast.success("Logged out successfully!");
+
+        setTimeout(() => {
+          dashboardSection.style.display = "none";
+          loginSection.style.display = "block";
+        }, 500);
+      });
+
+      // Validation Functions
+      function validatePhoneNumber(phone) {
+        return /^[0-9]{10}$/.test(phone);
+      }
+
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function validatePassword(password) {
+        return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password);
       }
     });
-
-    // Validation Functions
-    function validatePhoneNumber(phone) {
-      const phonePattern = /^[0-9]{10}$/;
-      return phonePattern.test(phone);
-    }
-
-    function validateEmail(email) {
-      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-      return emailPattern.test(email);
-    }
-
-    function validatePassword(password) {
-      const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-      return passwordPattern.test(password);
-    }
-  });
-</script>
+  </script>
 
   <!-- Footer -->
-<footer>
-  <h3>Stay connected and join our growing community! <br>Follow us on social media for the latest updates, tips, and inspiration for your indoor garden.</h3><br>
-  <div class="social-media">
-    <a href="https://www.instagram.com/">
-      <img src="images/instagram.png" alt="Instagram">
-    </a>
-    <a href="https://x.com/">
-      <img src="images/twitter.png" alt="Twitter">
-    </a>
-    <a href="https://pinterest.com/">
-      <img src="images/pinterest.png" alt="Pinterest">
-    </a>
-  </div>
-  <br>
-  <p style="text-align: right;">&copy; 2024 PlantasticCare. All rights reserved.</p>
-</footer>
-  
-  </body>
+  <footer>
+    <h3>Stay connected and join our growing community! <br>Follow us on social media for the latest updates, tips, and
+      inspiration for your indoor garden.</h3><br>
+    <div class="social-media">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+        <img src="images/instagram.png" alt="Instagram">
+      </a>
+      <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+        <img src="images/twitter.png" alt="Twitter">
+      </a>
+      <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer">
+        <img src="images/pinterest.png" alt="Pinterest">
+      </a>
+    </div>
+    <br>
+    <p style="text-align: right;">&copy; <span id="current-year">2024</span> PlantasticCare. All rights reserved.</p>
+  </footer>
+
+</body>
+
 </html>
